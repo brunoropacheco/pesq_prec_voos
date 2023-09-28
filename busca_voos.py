@@ -5,6 +5,16 @@ from selenium.webdriver.support.ui import Select
 from selenium import webdriver
 from time import sleep
 
+'''
+busca_voos.py
+Bruno Rodrigues Pacheco
+28/09/2023
+
+Esta versao esta fazendo o seguinte:
+    - usa o selenium para navegar no gooogle flights e buscar os precos de passagens
+        - o selenium precisa da aplicacao chromedriver.exe colocado em alguma pasta do path
+'''
+
 #Função para achar elementos na página
 def find(driver,css):
     return driver.find_elements(By.CSS_SELECTOR, css)
