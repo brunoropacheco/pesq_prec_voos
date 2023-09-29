@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 from selenium import webdriver
 from time import sleep
 import pandas as pd
-import numpy as np
+import re
 
 '''
 busca_voos.py
@@ -112,8 +112,6 @@ def google_scrapy(dep, arr, dep_dt):
     print(f'\nO menor valor encontrado próximo da data foi de R${min_price}')
     '''
     
-    
-
 def coloca_continente(row):
     paises_europeus = [
     'alemanha', 'austria', 'belgica', 'bosnia', 'bulgaria', 'croacia',
@@ -123,6 +121,26 @@ def coloca_continente(row):
     'suecia', 'suica', 'ucrania']
     if row['pais'] in paises_europeus:
         return 'europa'
+
+def pega_dados_resposta(string_voo):
+
+    # Expressões regulares para extrair os valores desejados
+    valor_match = re.search(r"A partir de (\d+) Reais brasileiros", string_voo)
+    origem_match = re.search(r"Sai do aeroporto (.+?) às", string_voo)
+    destino_match = re.search(r"chega no aeroporto (.+?) às", string_voo)
+    data_saida_match = re.search(r"(\d{2}:\d{2}) do dia (.+?) (\d+)", string_voo)
+    tempo_total_match = re.search(r"Duração total: (.+?)\. Parada", string_voo)
+
+    # Extrair os valores correspondentes das correspondências
+    valor = valor_match.group(1) if valor_match else None
+    origem = origem_match.group(1) if origem_match else None
+    destino = destino_match.group(1) if destino_match else None
+    hora_saida, dia_saida, mes_saida = data_saida_match.groups() if data_saida_match else (None, None, None)
+    tempo_total = tempo_total_match.group(1) if tempo_total_match else None
+
+    # Criar uma lista com os valores extraídos
+    lista_voo = [valor, origem, destino, f"{dia_saida}, {mes_saida}", hora_saida, tempo_total]
+    return lista_voo
 
 if __name__ == '__main__':
     df_aeroportos = pd.read_csv('.\\aeroportos.csv', delimiter=",")
@@ -135,6 +153,19 @@ if __name__ == '__main__':
     valor = 'europa'
     df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
     lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()
-    print(lista_codigos_europeus)
-
-    google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')
+    print(lista_codigos_europeus)  
+    
+    df_respostas = pd.DataFrame(columns=['valor', 'origem','destino','data_saida'
+                                , 'hora_saida','tempo_total'])
+    
+    #resposta = google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')
+    resposta = 'A partir de 2904 Reais brasileiros. Voo da Tap Air Portugal com 1 parada. Sai do aeroporto Aeroporto de Berlim-Brandemburgo às 12:50 do dia domingo, fevereiro 25 e chega no aeroporto Aeroporto Internacional do Rio de Janeiro - Galeão às 06:20 do dia segunda-feira, fevereiro 26. Duração total: 21 h 30 min. Parada (1 de 1) de 8 h no aeroporto Aeroporto Humberto Delgado, emLisboa.'
+    dados_resposta = pega_dados_resposta(resposta)
+    print(dados_resposta)
+    dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1],
+                     'destino': dados_resposta[2], 'data_saida': dados_resposta[3],
+                                'hora_saida': dados_resposta[4], 
+                                'tempo_total': dados_resposta[5]}]
+    print(dict_resposta)
+    df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
+    print(df_respostas)
