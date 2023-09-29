@@ -4,6 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium import webdriver
 from time import sleep
+import pandas as pd
+import numpy as np
 
 '''
 busca_voos.py
@@ -86,6 +88,11 @@ def google_scrapy(dep, arr, dep_dt):
     info = info.get_attribute("aria-label")[:-15]
     print(info)
 
+    #Fechando o Browser
+    driver.quit()
+    
+    return info
+
     '''
     #Armazendo informação extra sobre o preço da passagem
     add_info = find(driver,'[class="frOi8 AdWm1c fVSoi"]')[0].text
@@ -104,9 +111,30 @@ def google_scrapy(dep, arr, dep_dt):
     print(add_info)
     print(f'\nO menor valor encontrado próximo da data foi de R${min_price}')
     '''
-    #Fechando o Browser
-    driver.quit()
+    
+    
 
-google_scrapy("CDG", "GIG", "25/02/2024")
-google_scrapy("CDG", "GIG", "26/02/2024")
-google_scrapy("CDG", "GIG", "27/02/2024")
+def coloca_continente(row):
+    paises_europeus = [
+    'alemanha', 'austria', 'belgica', 'bosnia', 'bulgaria', 'croacia',
+    'dinamarca', 'espanha', 'finlandia', 'franca', 'grecia',
+    'holanda', 'hungria', 'inglaterra', 'irlanda', 'italia', 'noruega',
+    'polonia', 'portugal', 'rep tcheca', 'romenia', 'russia', 'servia',
+    'suecia', 'suica', 'ucrania']
+    if row['pais'] in paises_europeus:
+        return 'europa'
+
+if __name__ == '__main__':
+    df_aeroportos = pd.read_csv('.\\aeroportos.csv', delimiter=",")
+    df_aeroportos.columns = df_aeroportos.columns.str.lower()
+    df_aeroportos = df_aeroportos.apply(lambda x: x.astype(str).str.lower() if x.dtype == 'object' else x)
+    df_aeroportos['continente'] = df_aeroportos.apply(coloca_continente, axis=1)
+
+    print(df_aeroportos)
+
+    valor = 'europa'
+    df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
+    lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()
+    print(lista_codigos_europeus)
+
+    google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')

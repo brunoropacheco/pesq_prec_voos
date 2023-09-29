@@ -1,0 +1,129 @@
+PAIS,CIDADE,AEROPORTO,CODIGO
+Africa do Sul,Cidade do Cabo,Cape Int,CPT
+Africa do Sul,Johannerburg,Johannerburg Hand,JNB
+Alemanha,Berlim,Brandemburgo,BER
+Alemanha,Frankfurt,Frankfurt Main Int,FRA
+Alemanha,Stuttgart,Stuttgart,STR
+Alemanha,Hannover,Hanover,HAJ
+Alemanha,Dortmund,Dormund,DTM
+Alemanha,Hamburg,Hamburg,HAM
+Alemanha,Munich,Franz Josef Strauss Munich Int.,MUC
+Angola,Luanda,4 de fevereiro Apt,LAD
+Arabia Saudita,Riyadh,King Khaled Int.,RUH
+Argentina,Buenos Aires,Jorge Newbery,AEP
+Argentina,Buenos Aires,Min. Pistarini Int. Arpt (EZEIZA),EZE
+Argentina,Rosario,Fisherton,ROS
+Argentina,Cordoba,Pajas Blancas,COR
+Argentina,Bariloche,San Carlos de Bariloche Int.,BRC
+Aruba,Aruba,Rainha Beatrix,AUA
+Australia,Sydney,Kingsfond Smith,SYD
+Australia,Melbourne,Melbourne Int.,MEL
+Australia,Brisbane,Brisbane Int.,BNE
+Austria,Viena,Flughafen Wien Ag,VIE
+Belgica,Bruxelas,Aerop. Bruxelas,BRU
+Bosnia,Sarajevo,Butmir Int.,SJJ
+Bulgaria,Sofia,Vrazhdebna Int.,SOF
+Cabo Verde,Espargos,Amilcar Cabral Int.,SID
+Canada,Ottawa,Ottawa Macdonald-Cartier Int.,YOW
+Canada,Montreal,Dorval Int.,YUL
+Canada,Toronto,Pearson Int.,YYZ
+Canada,Vancouver,Vancouver Int.,YVR
+Canada,Quebec,Quebec,YQB
+Chile,Santiago,Arturo Merino Benitez,SCL
+Chile,Puerto Montt,Tepual,PMC
+China,Pequim,Capital Int.,PEK
+China,Xangai,Pu Dong Int.,PVG
+China,Hong Kong,Hong Kong Int.,HKG
+Colombia,Bogota,Eldorado,BOG
+Coreia do Sul,Seul,Incheon Int.,ICN
+Croacia,Zagreb,Pleso Int.,ZAG
+Cuba,Havana,Jose Marti,HAV
+Dinamarca,Copenhague,Copenhague Int.,CPH
+Egito,Cairo,Cairo Int.,CAI
+Em. Arabes U.,Dubai,Dubai Int.,DXB
+Equador,Guayaquil,Simon Bolivar,GYE
+Equador,Quito,Mariscal Sucr,UIO
+Espanha,Madri,Aerop. Barajas,MAD
+Espanha,Barcelona,Barcelona Int.,BCN
+Est. Unidos,Atlanta,William B Hartsfield Int,ATL
+Est. Unidos,Boston,Boston Logan Int.,BOS
+Est. Unidos,Chicago,O'Hare Int.,ORD
+Est. Unidos,Dallas,Dallas Fort Worth,DFW
+Est. Unidos,Denver,Denver Int.,DEN
+Est. Unidos,Detroit,Detroit City,DTW
+Est. Unidos,Hawai - Honolulu,Honolulu Int.,HNL
+Est. Unidos,Houston,George Bush Int,IAH
+Est. Unidos,Las Vegas,McCarran Int.,LAS
+Est. Unidos,Los Angeles,Los Angeles Int.,LAX
+Est. Unidos,Miami - FL,Miami Int.,MIA
+Est. Unidos,Nova Iorque,John F. Kennedy Int.,JFK
+Est. Unidos,Nova Iorque,Newark Liberty - New Jersey,EWR
+Est. Unidos,Nova Iorque,La Guardia,LGA
+Est. Unidos,Orlando,Orlando Int .MCO,MCO
+Est. Unidos,Sao Francisco,Sao Francisco Int.,SFO
+Est. Unidos,Seattle,Tacoma Int.,SEA
+Est. Unidos,Tampa - FL,Tampa Int.,TPA
+Est. Unidos,Washington - D.C.,Dulles Int.,IAD
+Est. Unidos,Washington - D.C.,Ronald Reagan,DCA
+Est. Unidos,Washington - D.C.,Baltimore,BWI
+Filipinas,Manila,Ninoy Aquino Int.,MNL
+Finlandia,Helsinki,Vantaa Int.,HEL
+Franca,Paris,Charles de Gaulle,CDG
+Franca,Paris,Orly,ORY
+Grecia,Atenas,Eleftherios Venizelos Int.,ATH
+Holanda,Amsterdan,Aerop. Schiphol,AMS
+Hungria,Budapeste,Feruhegy Int.,BUD
+India,Nova Deli,Indira Ghandi Int.,DEL
+Indonesia,Jakarta,Soekarno-Hatta Int.,CGK
+Inglaterra,Londres,Heathrow Int.,LHR
+Inglaterra,Londres,Gatwick Int.,LGW
+Irlanda,Dublin,Dublin Int.,DUB
+Israel,Tel Aviv,Ben Gurion Int.,TLV
+Italia,Milao,Aerop. Linate,LIN
+Italia,Milao,Malpensa,MXP
+Italia,Roma,Fiumicino Int.,FCO
+Italia,Roma,Ciampino,CIA
+Italia,Veneza,Marco Polo,VCE
+Japao,Osaka,Kansai Int.,KIX
+Japao,Toquio,Toquio Int. - Narita,NRT
+Japao,Toronto,Toquio Int,HND
+Japao,Nagoya,Chubu Int,NGO
+Japao,Osaka,Osaka Int.,ITM
+Libano,Beirute,Beirute Int.,BEY
+Malasia,Kuala Lumpur,Kuala Lumpur Int.,KUL
+Mexico,Cid. do Mexico,Juarez Int.,MEX
+Mexico,Cancun,Cancun Int,CUN
+Mexico,Guadalajara,Miguel Hidal Int,GDL
+Mexico,Acapulco,Alvarez Int,ACA
+Mocambique,Maputo,Maputo Int.,MPM
+Nigeria,Lagos,Murtala Muhammed,LOS
+Noruega,Oslo,Oslo Airport,OSL
+Nova Zelandia,Wellington,Wellington Int.,WLG
+Nova Zelandia,Auckland,Auckland Int.,AKL
+Panama,Panama City,Tocumen Int.,PTY
+Paraguai,Assuncao,Silvio Pettirossi,ASU
+Paraguai,Ciudad del Este,Alejo Garcia,AGT
+Peru,Lima,Jorge Chavez Int.,LIM
+Peru,Cuzco,Velazco Astete,CUZ
+Polonia,Varsovia,Warsaw Frederic Chopin,WAW
+Porto Rico,Jan Juan,Luis Munoz Marin Int.,SJU
+Portugal,Lisboa,Portela de Sacavem,LIS
+Portugal,C. do Porto,Porto Francisco de Sa Carneiro,OPO
+Quenia,Nairobi,Jomo Kenyatta Int.,NBO
+Rep Tcheca,Praga,Ruzyne Int.,PRG
+Romenia,Bucareste,Otopeni Int.,OPT
+Russia,St Petersburg,Pulkovo,LED
+Russia,Moscou,Sheremetyevo Int,SVO
+Senegal,Dakar,Yoff Airport,DKR
+Servia,Belgrado,Belgrado Int.,BEG
+Singapura,Singapore,Singapore Changi Apt.,SIN
+Siria,Damasco,Damasco,DAM
+Suecia,Stockholm,Stockholm Arlanda,ARN
+Suica,Genebra,Cointrin Int.,GVA
+Suica,Zurique,Aerop. Kloten Zurich Int.,ZRH
+Tailandia,Bangkok,Bangkok Int.,BKK
+Turquia,Istambul,Ataturk Int.,IST
+Ucrania,Kiev,Borispol Int.,KBP
+Uruguai,Montevideo,Aerop. Carrasco,MVD
+Uruguai,Punta del Este,Punta del Este,PDP
+Venezuela,Caracas,Simon Bolivar,CCS
