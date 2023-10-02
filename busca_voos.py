@@ -209,7 +209,9 @@ if __name__ == '__main__':
                                 'hora_saida': dados_resposta[4], 
                                 'tempo_total': dados_resposta[5]}]
                 df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
-                print(df_respostas)
+                df_respostas_ordernadoporpreco = df_respostas.sort_values(by = 'valor')
+                df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
+                print(df_respostas_ordernadoporpreco)
     
     #Fechando o Browser9
     driver.quit()
