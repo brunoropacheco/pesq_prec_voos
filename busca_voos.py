@@ -132,19 +132,19 @@ def pega_dados_resposta(string_voo):
     # Expressões regulares para extrair os valores desejados
     valor_match = re.search(r"A partir de (\d+) Reais brasileiros", string_voo)
     origem_match = re.search(r"Sai do aeroporto (.+?) às", string_voo)
-    destino_match = re.search(r"chega no aeroporto (.+?) às", string_voo)
+    #destino_match = re.search(r"chega no aeroporto (.+?) às", string_voo)
     data_saida_match = re.search(r"(\d{2}:\d{2}) do dia (.+?) (\d+)", string_voo)
     tempo_total_match = re.search(r"Duração total: (.+?)\. Parada", string_voo)
 
     # Extrair os valores correspondentes das correspondências
     valor = valor_match.group(1) if valor_match else None
     origem = origem_match.group(1) if origem_match else None
-    destino = destino_match.group(1) if destino_match else None
+    #destino = destino_match.group(1) if destino_match else None
     hora_saida, dia_saida, mes_saida = data_saida_match.groups() if data_saida_match else (None, None, None)
     tempo_total = tempo_total_match.group(1) if tempo_total_match else None
 
     # Criar uma lista com os valores extraídos
-    lista_voo = [valor, origem, destino, f"{dia_saida}, {mes_saida}", hora_saida, tempo_total]
+    lista_voo = [valor, origem, f"{dia_saida}, {mes_saida}", hora_saida, tempo_total]
     return lista_voo
 
 def cria_lista_datas(data_ini, data_fin):
@@ -158,6 +158,36 @@ def cria_lista_datas(data_ini, data_fin):
         data_atual += delta
     
     return lista_de_datas
+
+def ajusta_caracteres(coluna):
+    coluna = coluna.str.lower()
+    coluna = coluna.str.replace('ç', 'c')    
+    coluna = coluna.str.replace('-', '_')
+    coluna = coluna.str.replace(' ', '_')
+    coluna = coluna.str.replace('á', 'a')
+    coluna = coluna.str.replace('é', 'e')
+    coluna = coluna.str.replace('í', 'i')
+    coluna = coluna.str.replace('ó', 'o')
+    coluna = coluna.str.replace('ú', 'u')
+    coluna = coluna.str.replace('à', 'a')
+    coluna = coluna.str.replace('è', 'e')
+    coluna = coluna.str.replace('ì', 'i')
+    coluna = coluna.str.replace('ò', 'o')
+    coluna = coluna.str.replace('ù', 'u')
+    coluna = coluna.str.replace('â', 'a')
+    coluna = coluna.str.replace('ê', 'e')
+    coluna = coluna.str.replace('î', 'i')
+    coluna = coluna.str.replace('ô', 'o')
+    coluna = coluna.str.replace('û', 'u')
+    coluna = coluna.str.replace('ã', 'a')
+    coluna = coluna.str.replace('õ', 'o')
+    coluna = coluna.str.replace('ç', 'c')
+    coluna = coluna.str.replace('ä', 'a')
+    coluna = coluna.str.replace('ë', 'e')
+    coluna = coluna.str.replace('ï', 'i')
+    coluna = coluna.str.replace('ö', 'o')
+    coluna = coluna.str.replace('ü', 'u')
+    return coluna
 
 
 if __name__ == '__main__':
@@ -173,7 +203,7 @@ if __name__ == '__main__':
     df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
     lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()  
     
-    df_respostas = pd.DataFrame(columns=['valor', 'origem','destino','data_saida'
+    df_respostas = pd.DataFrame(columns=['valor', 'origem','data_saida'
                                 , 'hora_saida','tempo_total'])
 
     data_inicial = datetime.strptime(input('Data inicial - formato DD/MM/AAAA: '), "%d/%m/%Y")
@@ -204,12 +234,13 @@ if __name__ == '__main__':
             
             else:
                 dados_resposta = pega_dados_resposta(resposta)
-                dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1],
-                     'destino': dados_resposta[2], 'data_saida': dados_resposta[3],
-                                'hora_saida': dados_resposta[4], 
-                                'tempo_total': dados_resposta[5]}]
+                dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1], 
+                'data_saida': dados_resposta[2], 'hora_saida': dados_resposta[3], 
+                'tempo_total': dados_resposta[4]}]
                 df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
                 df_respostas_ordernadoporpreco = df_respostas.sort_values(by = 'valor')
+                df_respostas_ordernadoporpreco['origem'] = ajusta_caracteres(df_respostas_ordernadoporpreco['origem'])
+                df_respostas_ordernadoporpreco['data_saida'] = ajusta_caracteres(df_respostas_ordernadoporpreco['data_saida'])
                 df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
                 print(df_respostas_ordernadoporpreco)
     

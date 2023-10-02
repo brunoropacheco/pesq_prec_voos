@@ -1,50 +1,6 @@
-valor,origem,destino,data_saida,hora_saida,tempo_total
-2343,Aeroporto de Zurique,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",09:00,26 h 20 min
-2379,Aeroporto Internacional de Genebra,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",07:00,15 h 50 min
-2439,Aeroporto Internacional de Viena,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",07:55,20 h 25 min
-2493,Aeroporto Internacional de Viena,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",08:05,27 h 15 min
-2607,Aeroporto de Bruxelas,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",07:10,15 h 40 min
-2632,Aeroporto de Milão-Malpensa,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",17:45,16 h 35 min
-2666,Aeroporto Internacional de Roma,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",06:05,28 h 15 min
-2680,Aeroporto Adolfo Suárez - Barajas,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",21:10,13 h 10 min
-2730,Aeroporto de Budapeste Ferenc Liszt,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",20:20,30 h 50 min
-2796,Aeroporto de Bruxelas,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",18:05,16 h 35 min
-2806,Aeroporto Internacional de Atenas,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",19:30,39 h 35 min
-2864,Aeroporto de Barcelona El Prat,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",06:45,19 h 50 min
-2890,Aeroporto de Frankfurt,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",06:00,28 h 20 min
-2890,Aeroporto de Frankfurt,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",06:00,18 h 5 min
-2905,Aeroporto de Berlim-Brandemburgo,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",12:50,21 h 30 min
-2905,Aeroporto de Berlim-Brandemburgo,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",17:25,30 h 40 min
-2911,Aeroporto de Hamburgo,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",12:35,21 h 45 min
-2911,Aeroporto de Hamburgo,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",17:10,30 h 55 min
-2958,Aeroporto de Praga,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",18:55,29 h 10 min
-2958,Aeroporto de Munique-Franz Josef Strauss,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",12:50,21 h 30 min
-2958,Aeroporto de Munique-Franz Josef Strauss,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",06:05,28 h 15 min
-2978,Aeroporto de Dublin,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",17:00,16 h 20 min
-2984,Aeroporto de Oslo Gardermoen,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",18:45,29 h 20 min
-2996,Aeroporto de Amesterdão Schiphol,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",07:00,19 h 35 min
-3009,Aeroporto de Sófia,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",05:40,34 h 40 min
-3021,Aeroporto de Arlanda,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",17:50,33 h 20 min
-3036,Aeroporto de Paris-Orly,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",20:35,13 h 45 min
-3065,Aeroporto de Londres Gatwick,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",16:35,30 h 30 min
-3088,Aeroporto de Lyon-Saint-Exupéry,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",18:15,29 h 50 min
-3102,Aeroporto Frédéric Chopin de Varsóvia,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",07:20,27 h
-3118,Aeroporto Internacional Franjo Tuđman,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",13:35,23 h 45 min
-3124,Aeroporto Francisco Sá Carneiro,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",15:10,
-3177,Aeroporto Humberto Delgado,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",20:05,17 h 15 min
-3192,Aeroporto Internacional de Sarajevo,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",10:10,27 h 10 min
-3295,Aeroporto de Copenhaga,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",18:20,16 h
-3300,Aeroporto Internacional Marco Polo,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",18:05,16 h 15 min
-3369,Heathrow Airport,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",18:30,14 h 50 min
-3382,Aeroporto de Stuttgart,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",09:35,24 h 45 min
-3393,Aeroporto de Milão-Linate,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",19:00,19 h 20 min
-3429,Aeroporto de Hanôver,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",11:35,22 h 45 min
-3442,Aeroporto Internacional de Belgrado,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",06:05,21 h 5 min
-3495,Aeroporto de Paris-Charles de Gaulle,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",12:00,23 h 20 min
-3529,Aeroporto de Helsínquia-Vantaa,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",11:45,23 h 35 min
-3658,Aeroporto de Hanôver,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",09:35,24 h 45 min
-3889,Aeroporto de Stuttgart,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",15:05,19 h 15 min
-6267,Aeroporto de Dortmund,Aeroporto Internacional do Rio de Janeiro - Galeão,"quarta-feira, fevereiro, 21",06:50,27 h 50 min
-6346,Aeroporto de Dortmund,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",06:50,30 h 30 min
-7658,Aeroporto Moscovo Sheremetievo,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",16:55,27 h 45 min
-7900,Aeroporto de Pulkovo,Aeroporto Internacional do Rio de Janeiro - Galeão,"terça-feira, fevereiro, 20",02:10,27 h
+valor,origem,data_saida,hora_saida,tempo_total
+2890,aeroporto_de_frankfurt,"terca_feira,_fevereiro,_20",06:00,28 h 20 min
+2905,aeroporto_de_berlim_brandemburgo,"terca_feira,_fevereiro,_20",17:25,30 h 40 min
+3658,aeroporto_de_hanôver,"terca_feira,_fevereiro,_20",09:35,24 h 45 min
+3889,aeroporto_de_stuttgart,"terca_feira,_fevereiro,_20",15:05,19 h 15 min
+6346,aeroporto_de_dortmund,"terca_feira,_fevereiro,_20",06:50,30 h 30 min
