@@ -40,7 +40,6 @@ def wait(driver,css):
     while (len(driver.find_elements(By.CSS_SELECTOR, css)) <1) and var < 3:
         sleep(0.3)
         var = var + 0.3
-        print(var)
     if var > 3:
         return False
     return True
@@ -93,11 +92,10 @@ def google_scrapy(dep, arr, dep_dt, driver):
         #Armazendo informação da melhor passagem
         info = find(driver, '[class="JMc5Xc"]')[0]
         info = info.get_attribute("aria-label")[:-15]
-        print(info)
-        
+        #print(info)
         return info
     else: 
-        print('nao ha voos')
+        #print('nao ha voos')
         return 'Nao ha voos'
 
     '''
@@ -173,9 +171,7 @@ if __name__ == '__main__':
 
     valor = 'europa'
     df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
-    lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()
-    lista_codigos_europeus = lista_codigos_europeus[26:]
-    print(lista_codigos_europeus)  
+    lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()  
     
     df_respostas = pd.DataFrame(columns=['valor', 'origem','destino','data_saida'
                                 , 'hora_saida','tempo_total'])
@@ -196,6 +192,7 @@ if __name__ == '__main__':
     options = webdriver.ChromeOptions()
     options.add_argument(f"--window-position={posicao_x},{posicao_y}")
     options.add_argument(f"--window-size={largura_janela},{altura_janela}")
+    options.add_argument("--headless=new")
     driver = webdriver.Chrome('chromedriver', options=options)
 
 
@@ -212,11 +209,12 @@ if __name__ == '__main__':
                                 'hora_saida': dados_resposta[4], 
                                 'tempo_total': dados_resposta[5]}]
                 df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
+                print(df_respostas)
     
     #Fechando o Browser9
     driver.quit()
     
-    print(df_respostas)
+    #print(df_respostas)
     
     '''
     #resposta = google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')
