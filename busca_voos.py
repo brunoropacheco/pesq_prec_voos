@@ -36,8 +36,14 @@ def click(driver,css):
 
 #função para aguardar os elementos aparacerem na tela
 def wait(driver,css):
-    while len(driver.find_elements(By.CSS_SELECTOR, css)) <1:
+    var = 0
+    while (len(driver.find_elements(By.CSS_SELECTOR, css)) <1) and var < 3:
         sleep(0.3)
+        var = var + 0.3
+        print(var)
+    if var > 3:
+        return False
+    return True
 
 #Programa de Controle de busca de passagens
 def google_scrapy(dep, arr, dep_dt, driver):
@@ -81,14 +87,18 @@ def google_scrapy(dep, arr, dep_dt, driver):
     click(driver,'[aria-label="Pesquisar"]')
 
     #Aguardar processo
-    wait(driver,'[class="JMc5Xc"]')
+    existe = wait(driver,'[class="JMc5Xc"]')
 
-    #Armazendo informação da melhor passagem
-    info = find(driver, '[class="JMc5Xc"]')[0]
-    info = info.get_attribute("aria-label")[:-15]
-    print(info)
-    
-    return info
+    if existe:
+        #Armazendo informação da melhor passagem
+        info = find(driver, '[class="JMc5Xc"]')[0]
+        info = info.get_attribute("aria-label")[:-15]
+        print(info)
+        
+        return info
+    else: 
+        print('nao ha voos')
+        return 'Nao ha voos'
 
     '''
     #Armazendo informação extra sobre o preço da passagem
@@ -164,7 +174,8 @@ if __name__ == '__main__':
     valor = 'europa'
     df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
     lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()
-    #print(lista_codigos_europeus)  
+    lista_codigos_europeus = lista_codigos_europeus[26:]
+    print(lista_codigos_europeus)  
     
     df_respostas = pd.DataFrame(columns=['valor', 'origem','destino','data_saida'
                                 , 'hora_saida','tempo_total'])
@@ -191,16 +202,22 @@ if __name__ == '__main__':
     for data in lista_datas:
         for cod_aerop in lista_codigos_europeus:
             resposta = google_scrapy(cod_aerop, 'GIG', data, driver)
-            dados_resposta = pega_dados_resposta(resposta)
-            dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1],
+            if resposta == 'Nao ha voos':
+                print('nao ha voos de '+cod_aerop+' na data '+data)
+            
+            else:
+                dados_resposta = pega_dados_resposta(resposta)
+                dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1],
                      'destino': dados_resposta[2], 'data_saida': dados_resposta[3],
                                 'hora_saida': dados_resposta[4], 
                                 'tempo_total': dados_resposta[5]}]
-            df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
-            print(df_respostas)
-
+                df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
+    
     #Fechando o Browser9
     driver.quit()
+    
+    print(df_respostas)
+    
     '''
     #resposta = google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')
     resposta = 'A partir de 2904 Reais brasileiros. Voo da Tap Air Portugal com 1 parada. Sai do aeroporto Aeroporto de Berlim-Brandemburgo às 12:50 do dia domingo, fevereiro 25 e chega no aeroporto Aeroporto Internacional do Rio de Janeiro - Galeão às 06:20 do dia segunda-feira, fevereiro 26. Duração total: 21 h 30 min. Parada (1 de 1) de 8 h no aeroporto Aeroporto Humberto Delgado, emLisboa.'
