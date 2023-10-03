@@ -208,6 +208,7 @@ if __name__ == '__main__':
 
     data_inicial = datetime.strptime(input('Data inicial - formato DD/MM/AAAA: '), "%d/%m/%Y")
     data_final = datetime.strptime(input('Data final - formato DD/MM/AAAA: '), "%d/%m/%Y")
+    cod_dest = input('Aeroporto de Destino: ')
 
     lista_datas = cria_lista_datas(data_inicial, data_final)
 
@@ -228,7 +229,7 @@ if __name__ == '__main__':
 
     for data in lista_datas:
         for cod_aerop in lista_codigos_europeus:
-            resposta = google_scrapy(cod_aerop, 'GIG', data, driver)
+            resposta = google_scrapy(cod_aerop, cod_dest, data, driver)
             if resposta == 'Nao ha voos':
                 print('nao ha voos de '+cod_aerop+' na data '+data)
             

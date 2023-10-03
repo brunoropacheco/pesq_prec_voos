@@ -1,6 +1,180 @@
 valor,origem,data_saida,hora_saida,tempo_total
-2890,aeroporto_de_frankfurt,"terca_feira,_fevereiro,_20",06:00,28 h 20 min
-2905,aeroporto_de_berlim_brandemburgo,"terca_feira,_fevereiro,_20",17:25,30 h 40 min
-3658,aeroporto_de_hanôver,"terca_feira,_fevereiro,_20",09:35,24 h 45 min
-3889,aeroporto_de_stuttgart,"terca_feira,_fevereiro,_20",15:05,19 h 15 min
-6346,aeroporto_de_dortmund,"terca_feira,_fevereiro,_20",06:50,30 h 30 min
+2080,aeroporto_de_zurique,"quarta_feira,_fevereiro,_28",07:20,15 h 55 min
+2133,aeroporto_de_zurique,"domingo,_fevereiro,_25",18:05,14 h 55 min
+2148,aeroporto_de_zurique,"terca_feira,_fevereiro,_27",07:30,16 h 30 min
+2154,aeroporto_de_zurique,"segunda_feira,_fevereiro,_26",09:00,15 h
+2171,aeroporto_adolfo_suarez___barajas,"terca_feira,_fevereiro,_27",00:35,18 h 50 min
+2176,aeroporto_adolfo_suarez___barajas,"quarta_feira,_fevereiro,_28",08:30,20 h 15 min
+2180,aeroporto_de_copenhaga,"segunda_feira,_fevereiro,_26",13:25,20 h 25 min
+2186,aeroporto_de_copenhaga,"quarta_feira,_fevereiro,_28",13:25,20 h 25 min
+2293,aeroporto_internacional_de_viena,"terca_feira,_fevereiro,_27",19:40,15 h 25 min
+2293,aeroporto_internacional_de_viena,"segunda_feira,_fevereiro,_26",19:40,15 h 25 min
+2298,aeroporto_internacional_de_viena,"quarta_feira,_fevereiro,_28",19:40,15 h 25 min
+2304,aeroporto_internacional_de_atenas,"terca_feira,_fevereiro,_27",19:30,28 h 10 min
+2304,aeroporto_internacional_de_atenas,"segunda_feira,_fevereiro,_26",19:30,15 h 55 min
+2304,aeroporto_internacional_de_atenas,"domingo,_fevereiro,_25",06:00,29 h 25 min
+2314,aeroporto_internacional_de_genebra,"terca_feira,_fevereiro,_27",16:30,16 h 30 min
+2339,aeroporto_internacional_de_viena,"domingo,_fevereiro,_25",18:15,14 h 45 min
+2396,aeroporto_internacional_de_genebra,"domingo,_fevereiro,_25",18:30,14 h 30 min
+2396,aeroporto_internacional_de_genebra,"segunda_feira,_fevereiro,_26",18:30,14 h 30 min
+2396,aeroporto_de_amesterdao_schiphol,"quarta_feira,_fevereiro,_28",13:45,20 h 5 min
+2402,aeroporto_internacional_de_genebra,"quarta_feira,_fevereiro,_28",18:30,14 h 30 min
+2405,aeroporto_de_bruxelas,"domingo,_fevereiro,_25",18:05,14 h 55 min
+2405,aeroporto_de_bruxelas,"segunda_feira,_fevereiro,_26",18:05,14 h 55 min
+2411,aeroporto_de_bruxelas,"quarta_feira,_fevereiro,_28",18:05,14 h 55 min
+2421,aeroporto_humberto_delgado,"domingo,_fevereiro,_25",08:50,
+2421,aeroporto_humberto_delgado,"segunda_feira,_fevereiro,_26",08:50,
+2426,aeroporto_internacional_de_viena,"quinta_feira,_fevereiro,_29",08:05,15 h 55 min
+2427,aeroporto_humberto_delgado,"terca_feira,_fevereiro,_27",08:50,
+2427,aeroporto_humberto_delgado,"quarta_feira,_fevereiro,_28",08:50,
+2432,aeroporto_de_budapeste_ferenc_liszt,"segunda_feira,_fevereiro,_26",17:00,16 h 50 min
+2520,aeroporto_internacional_marco_polo,"segunda_feira,_fevereiro,_26",11:55,15 h 35 min
+2520,aeroporto_internacional_marco_polo,"domingo,_fevereiro,_25",17:50,29 h 50 min
+2526,aeroporto_internacional_marco_polo,"terca_feira,_fevereiro,_27",18:05,29 h 20 min
+2545,aeroporto_de_milao_malpensa,"domingo,_fevereiro,_25",11:55,15 h 35 min
+2545,aeroporto_de_milao_malpensa,"segunda_feira,_fevereiro,_26",11:55,15 h 35 min
+2548,aeroporto_internacional_de_roma,"segunda_feira,_fevereiro,_26",18:40,15 h 10 min
+2552,aeroporto_de_milao_malpensa,"terca_feira,_fevereiro,_27",06:20,17 h 5 min
+2552,aeroporto_de_milao_malpensa,"quarta_feira,_fevereiro,_28",06:20,17 h 5 min
+2553,aeroporto_internacional_de_roma,"domingo,_fevereiro,_25",06:05,17 h 20 min
+2559,aeroporto_de_bruxelas,"terca_feira,_fevereiro,_27",07:10,17 h 25 min
+2559,aeroporto_internacional_de_roma,"terca_feira,_fevereiro,_27",19:35,14 h 55 min
+2559,aeroporto_internacional_de_roma,"quarta_feira,_fevereiro,_28",19:35,14 h 55 min
+2571,aeroporto_internacional_marco_polo,"quarta_feira,_fevereiro,_28",15:15,19 h 15 min
+2594,aeroporto_de_copenhaga,"terca_feira,_fevereiro,_27",15:05,17 h 55 min
+2594,aeroporto_de_copenhaga,"domingo,_fevereiro,_25",15:15,17 h 45 min
+2634,aeroporto_de_bruxelas,"quinta_feira,_fevereiro,_29",19:45,15 h 20 min
+2636,aeroporto_de_milao_linate,"domingo,_fevereiro,_25",19:00,18 h 40 min
+2646,aeroporto_de_barcelona_el_prat,"segunda_feira,_fevereiro,_26",06:25,16 h 15 min
+2646,aeroporto_de_barcelona_el_prat,"domingo,_fevereiro,_25",17:15,29 h 25 min
+2646,aeroporto_de_barcelona_el_prat,"terca_feira,_fevereiro,_27",17:15,17 h 10 min
+2651,aeroporto_adolfo_suarez___barajas,"segunda_feira,_fevereiro,_26",05:50,16 h 50 min
+2652,aeroporto_de_barcelona_el_prat,"quarta_feira,_fevereiro,_28",06:25,16 h 15 min
+2652,aeroporto_de_barcelona_el_prat,"quinta_feira,_fevereiro,_29",06:25,16 h 15 min
+2657,aeroporto_adolfo_suarez___barajas,"quinta_feira,_fevereiro,_29",05:50,16 h 50 min
+2666,aeroporto_francisco_sa_carneiro,"segunda_feira,_fevereiro,_26",20:10,13 h 35 min
+2666,aeroporto_francisco_sa_carneiro,"domingo,_fevereiro,_25",20:10,13 h 35 min
+2672,aeroporto_francisco_sa_carneiro,"quarta_feira,_fevereiro,_28",20:10,13 h 35 min
+2672,aeroporto_francisco_sa_carneiro,"terca_feira,_fevereiro,_27",20:10,13 h 35 min
+2674,aeroporto_de_milao_linate,"segunda_feira,_fevereiro,_26",17:45,16 h 5 min
+2676,aeroporto_de_lyon_saint_exupery,"domingo,_fevereiro,_25",15:45,30 h 5 min
+2680,aeroporto_de_milao_linate,"quarta_feira,_fevereiro,_28",17:45,16 h 5 min
+2680,aeroporto_de_milao_linate,"terca_feira,_fevereiro,_27",17:45,16 h 5 min
+2681,aeroporto_adolfo_suarez___barajas,"domingo,_fevereiro,_25",21:30,19 h 15 min
+2702,aeroporto_de_paris_orly,"segunda_feira,_fevereiro,_26",10:00,16 h 30 min
+2724,aeroporto_internacional_de_atenas,"quarta_feira,_fevereiro,_28",06:00,17 h 40 min
+2724,aeroporto_internacional_de_atenas,"quinta_feira,_fevereiro,_29",06:00,17 h 40 min
+2734,aeroporto_de_copenhaga,"quinta_feira,_fevereiro,_29",20:00,14 h 40 min
+2738,aeroporto_de_paris_orly,"terca_feira,_fevereiro,_27",08:00,15 h 25 min
+2738,aeroporto_de_paris_orly,"domingo,_fevereiro,_25",08:00,15 h 25 min
+2744,aeroporto_de_paris_orly,"quinta_feira,_fevereiro,_29",08:00,15 h 25 min
+2744,aeroporto_de_paris_orly,"quarta_feira,_fevereiro,_28",08:00,15 h 25 min
+2753,aeroporto_de_oslo_gardermoen,"domingo,_fevereiro,_25",12:55,21 h 35 min
+2753,aeroporto_de_oslo_gardermoen,"segunda_feira,_fevereiro,_26",18:45,15 h 45 min
+2754,aeroporto_de_oslo_gardermoen,"quarta_feira,_fevereiro,_28",13:05,21 h 25 min
+2754,aeroporto_de_oslo_gardermoen,"terca_feira,_fevereiro,_27",18:45,28 h 40 min
+2792,aeroporto_internacional_de_belgrado,"domingo,_fevereiro,_25",20:20,25 h 30 min
+2792,aeroporto_internacional_de_belgrado,"segunda_feira,_fevereiro,_26",09:00,17 h 10 min
+2798,aeroporto_de_arlanda,"quarta_feira,_fevereiro,_28",14:55,20 h 10 min
+2799,aeroporto_internacional_de_belgrado,"quarta_feira,_fevereiro,_28",09:00,17 h 10 min
+2799,aeroporto_internacional_de_belgrado,"terca_feira,_fevereiro,_27",20:20,25 h 30 min
+2801,aeroporto_de_arlanda,"terca_feira,_fevereiro,_27",14:55,20 h 10 min
+2816,aeroporto_de_budapeste_ferenc_liszt,"domingo,_fevereiro,_25",17:00,16 h 50 min
+2817,aeroporto_de_amesterdao_schiphol,"domingo,_fevereiro,_25",18:30,19 h 10 min
+2820,heathrow_airport,"segunda_feira,_fevereiro,_26",16:55,16 h 30 min
+2820,heathrow_airport,"terca_feira,_fevereiro,_27",16:55,16 h 30 min
+2827,heathrow_airport,"quarta_feira,_fevereiro,_28",16:55,16 h 30 min
+2827,aeroporto_de_amesterdao_schiphol,"terca_feira,_fevereiro,_27",17:55,16 h 30 min
+2844,aeroporto_de_lyon_saint_exupery,"segunda_feira,_fevereiro,_26",05:20,18 h 20 min
+2851,aeroporto_de_lyon_saint_exupery,"quarta_feira,_fevereiro,_28",11:10,23 h 20 min
+2851,aeroporto_de_munique_franz_josef_strauss,"terca_feira,_fevereiro,_27",10:50,35 h 50 min
+2851,aeroporto_de_lyon_saint_exupery,"terca_feira,_fevereiro,_27",18:15,29 h 10 min
+2851,aeroporto_internacional_franjo_tuđman,"terca_feira,_fevereiro,_27",20:00,25 h 50 min
+2855,aeroporto_de_amesterdao_schiphol,"segunda_feira,_fevereiro,_26",07:00,16 h 40 min
+2858,aeroporto_internacional_franjo_tuđman,"quarta_feira,_fevereiro,_28",09:15,16 h 55 min
+2894,aeroporto_de_dublin,"domingo,_fevereiro,_25",11:10,15 h 20 min
+2894,aeroporto_de_dublin,"segunda_feira,_fevereiro,_26",11:10,15 h 20 min
+2901,aeroporto_de_dublin,"quarta_feira,_fevereiro,_28",16:55,16 h 35 min
+2901,aeroporto_de_dublin,"terca_feira,_fevereiro,_27",17:00,16 h 30 min
+2911,aeroporto_de_sofia,"domingo,_fevereiro,_25",12:35,21 h 25 min
+2912,aeroporto_de_frankfurt,"domingo,_fevereiro,_25",06:00,17 h 25 min
+2912,aeroporto_de_frankfurt,"segunda_feira,_fevereiro,_26",06:00,17 h 40 min
+2912,aeroporto_de_frankfurt,"terca_feira,_fevereiro,_27",06:00,17 h 25 min
+2919,aeroporto_de_frankfurt,"quarta_feira,_fevereiro,_28",06:00,17 h 25 min
+2919,aeroporto_de_frankfurt,"quinta_feira,_fevereiro,_29",06:00,17 h 25 min
+2932,aeroporto_de_sofia,"segunda_feira,_fevereiro,_26",05:40,19 h 20 min
+2959,aeroporto_de_londres_gatwick,"segunda_feira,_fevereiro,_26",11:00,14 h 30 min
+2965,aeroporto_de_paris_charles_de_gaulle,"segunda_feira,_fevereiro,_26",20:35,14 h 5 min
+2972,aeroporto_de_paris_charles_de_gaulle,"quarta_feira,_fevereiro,_28",20:35,14 h 5 min
+2972,aeroporto_de_paris_charles_de_gaulle,"quinta_feira,_fevereiro,_29",20:35,14 h 5 min
+2973,aeroporto_de_arlanda,"segunda_feira,_fevereiro,_26",16:05,18 h 25 min
+2982,aeroporto_de_praga,"segunda_feira,_fevereiro,_26",12:30,15 h
+2982,aeroporto_de_praga,"domingo,_fevereiro,_25",19:15,15 h 15 min
+2989,aeroporto_de_praga,"quarta_feira,_fevereiro,_28",12:30,22 h
+2995,aeroporto_de_londres_gatwick,"terca_feira,_fevereiro,_27",16:35,29 h 50 min
+2996,aeroporto_frederic_chopin_de_varsovia,"domingo,_fevereiro,_25",13:00,21 h 30 min
+2996,aeroporto_frederic_chopin_de_varsovia,"segunda_feira,_fevereiro,_26",13:05,21 h 25 min
+3002,aeroporto_de_paris_charles_de_gaulle,"domingo,_fevereiro,_25",14:25,19 h 25 min
+3002,aeroporto_de_paris_charles_de_gaulle,"terca_feira,_fevereiro,_27",18:35,15 h 15 min
+3004,aeroporto_frederic_chopin_de_varsovia,"quarta_feira,_fevereiro,_28",13:05,21 h 25 min
+3007,aeroporto_internacional_de_sarajevo,"segunda_feira,_fevereiro,_26",15:30,30 h 20 min
+3007,aeroporto_internacional_de_sarajevo,"domingo,_fevereiro,_25",20:15,25 h 35 min
+3017,aeroporto_internacional_de_sarajevo,"quinta_feira,_fevereiro,_29",15:30,30 h 20 min
+3017,aeroporto_internacional_de_sarajevo,"quarta_feira,_fevereiro,_28",08:20,17 h 50 min
+3022,heathrow_airport,"domingo,_fevereiro,_25",06:00,16 h 25 min
+3039,aeroporto_de_sofia,"terca_feira,_fevereiro,_27",13:45,21 h 5 min
+3040,aeroporto_de_arlanda,"domingo,_fevereiro,_25",16:15,18 h 15 min
+3050,aeroporto_de_sofia,"quarta_feira,_fevereiro,_28",13:45,21 h 5 min
+3061,aeroporto_de_londres_gatwick,"domingo,_fevereiro,_25",09:10,17 h 20 min
+3087,aeroporto_de_munique_franz_josef_strauss,"domingo,_fevereiro,_25",19:05,15 h 40 min
+3087,aeroporto_de_munique_franz_josef_strauss,"segunda_feira,_fevereiro,_26",19:05,15 h 40 min
+3094,aeroporto_de_munique_franz_josef_strauss,"quarta_feira,_fevereiro,_28",19:05,15 h 40 min
+3094,aeroporto_de_munique_franz_josef_strauss,"quinta_feira,_fevereiro,_29",19:05,15 h 40 min
+3096,aeroporto_de_sofia,"quinta_feira,_fevereiro,_29",09:50,17 h 20 min
+3143,aeroporto_de_berlim_brandemburgo,"domingo,_fevereiro,_25",06:00,17 h 25 min
+3143,aeroporto_de_berlim_brandemburgo,"terca_feira,_fevereiro,_27",17:25,17 h 5 min
+3143,aeroporto_de_berlim_brandemburgo,"segunda_feira,_fevereiro,_26",06:00,17 h 40 min
+3149,aeroporto_de_hamburgo,"segunda_feira,_fevereiro,_26",06:00,17 h 40 min
+3149,aeroporto_de_hamburgo,"domingo,_fevereiro,_25",06:00,17 h 25 min
+3149,aeroporto_de_hamburgo,"terca_feira,_fevereiro,_27",17:10,17 h 20 min
+3150,aeroporto_de_berlim_brandemburgo,"quinta_feira,_fevereiro,_29",17:40,16 h 50 min
+3157,aeroporto_de_hamburgo,"quinta_feira,_fevereiro,_29",17:10,17 h 20 min
+3157,aeroporto_de_hamburgo,"quarta_feira,_fevereiro,_28",12:35,21 h 55 min
+3177,aeroporto_de_praga,"terca_feira,_fevereiro,_27",15:45,19 h 20 min
+3179,aeroporto_de_berlim_brandemburgo,"quarta_feira,_fevereiro,_28",12:50,34 h 35 min
+3181,aeroporto_internacional_franjo_tuđman,"quinta_feira,_fevereiro,_29",09:15,16 h 55 min
+3315,aeroporto_internacional_franjo_tuđman,"domingo,_fevereiro,_25",17:55,15 h 5 min
+3315,aeroporto_internacional_franjo_tuđman,"segunda_feira,_fevereiro,_26",17:55,15 h 5 min
+3331,aeroporto_internacional_de_sarajevo,"terca_feira,_fevereiro,_27",10:10,23 h 40 min
+3349,aeroporto_frederic_chopin_de_varsovia,"terca_feira,_fevereiro,_27",06:35,15 h 40 min
+3390,aeroporto_de_helsinquia_vantaa,"terca_feira,_fevereiro,_27",12:30,23 h
+3398,aeroporto_de_helsinquia_vantaa,"quarta_feira,_fevereiro,_28",12:30,23 h
+3398,aeroporto_de_helsinquia_vantaa,"quinta_feira,_fevereiro,_29",12:30,23 h
+3408,aeroporto_de_stuttgart,"segunda_feira,_fevereiro,_26",09:30,18 h
+3417,aeroporto_de_stuttgart,"quinta_feira,_fevereiro,_29",09:30,18 h
+3435,aeroporto_de_budapeste_ferenc_liszt,"terca_feira,_fevereiro,_27",06:20,15 h 55 min
+3441,aeroporto_de_budapeste_ferenc_liszt,"quarta_feira,_fevereiro,_28",06:20,15 h 55 min
+3447,aeroporto_de_stuttgart,"domingo,_fevereiro,_25",14:20,20 h 10 min
+3447,aeroporto_de_stuttgart,"terca_feira,_fevereiro,_27",14:20,20 h 10 min
+3455,aeroporto_de_stuttgart,"quarta_feira,_fevereiro,_28",14:20,20 h 10 min
+3544,aeroporto_de_helsinquia_vantaa,"domingo,_fevereiro,_25",17:35,17 h 55 min
+3544,aeroporto_de_helsinquia_vantaa,"segunda_feira,_fevereiro,_26",09:40,18 h 50 min
+3661,aeroporto_de_londres_gatwick,"quarta_feira,_fevereiro,_28",17:25,16 h 20 min
+4156,aeroporto_de_hanover,"quarta_feira,_fevereiro,_28",14:55,18 h 5 min
+4159,aeroporto_de_hanover,"segunda_feira,_fevereiro,_26",15:30,42 h
+5726,aeroporto_de_hanover,"terca_feira,_fevereiro,_27",06:15,28 h 14 min
+6278,aeroporto_de_hanover,"quinta_feira,_fevereiro,_29",06:15,28 h 14 min
+7031,aeroporto_de_dortmund,"domingo,_fevereiro,_25",12:20,21 h 30 min
+7031,aeroporto_de_dortmund,"segunda_feira,_fevereiro,_26",06:50,27 h
+7031,aeroporto_de_dortmund,"terca_feira,_fevereiro,_27",06:50,27 h
+7048,aeroporto_de_dortmund,"quarta_feira,_fevereiro,_28",06:50,27 h
+7048,aeroporto_de_dortmund,"quinta_feira,_fevereiro,_29",06:50,27 h
+7052,aeroporto_moscovo_sheremetievo,"domingo,_fevereiro,_25",16:55,24 h 5 min
+7052,aeroporto_moscovo_sheremetievo,"segunda_feira,_fevereiro,_26",16:55,24 h 5 min
+7074,aeroporto_moscovo_sheremetievo,"terca_feira,_fevereiro,_27",16:55,24 h 5 min
+7074,aeroporto_moscovo_sheremetievo,"quarta_feira,_fevereiro,_28",16:55,24 h 5 min
+7186,aeroporto_de_pulkovo,"segunda_feira,_fevereiro,_26",02:10,21 h 40 min
+7186,aeroporto_de_pulkovo,"domingo,_fevereiro,_25",02:10,21 h 40 min
+7209,aeroporto_de_pulkovo,"quarta_feira,_fevereiro,_28",02:10,21 h 40 min
+7209,aeroporto_de_pulkovo,"terca_feira,_fevereiro,_27",02:10,21 h 40 min
+9265,aeroporto_de_hanover,"domingo,_fevereiro,_25",06:35,27 h 54 min
