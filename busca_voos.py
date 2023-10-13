@@ -1,13 +1,15 @@
 #Importando bibliotecas
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from time import sleep
 import pandas as pd
 import re
 from datetime import datetime, timedelta
 import pyautogui
+import threading
 
 '''
 busca_voos.py
@@ -31,6 +33,7 @@ def write(element,text):
 
 #Função para clicar em elementos da página
 def click(driver,css):
+    wait(driver, css) # wait for the element to appear
     driver.find_element(By.CSS_SELECTOR, css).click()
     sleep(0.5)
 
@@ -189,6 +192,45 @@ def ajusta_caracteres(coluna):
     coluna = coluna.str.replace('ü', 'u')
     return coluna
 
+def processar_dados(data_th, cods_europeus):
+    print(f'Iniciando processamento para a data {data_th} em thread {threading.current_thread().name} - data ')
+    global df_respostas
+    #Abrir Chrome Browser e Google Flights
+
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome('chromedriver', options=options)
+    
+    for cod_aerop in cods_europeus:
+        try:
+            resposta = google_scrapy(cod_aerop, cod_dest, data_th, driver)
+            if resposta == 'Nao ha voos':
+                print('nao ha voos de '+cod_aerop+' na data '+data_th)
+            
+            else:
+                dados_resposta = pega_dados_resposta(resposta)
+                dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1], 
+                'data_saida': dados_resposta[2], 'hora_saida': dados_resposta[3], 
+                'tempo_total': dados_resposta[4]}]
+
+                lock.acquire()
+
+                df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
+                df_respostas_ordernadoporpreco = df_respostas.sort_values(by = 'valor')
+                df_respostas_ordernadoporpreco['origem'] = ajusta_caracteres(df_respostas_ordernadoporpreco['origem'])
+                df_respostas_ordernadoporpreco['data_saida'] = ajusta_caracteres(df_respostas_ordernadoporpreco['data_saida'])
+                df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
+                lock.release()
+
+                print(df_respostas_ordernadoporpreco)
+            
+        except:
+            print('erro na thread '+threading.current_thread().name+' para o aeroporto '+cod_aerop+' na data '+data_th)
+            pass
+
+    #Fechando o Browser9
+    driver.quit()
+
 
 if __name__ == '__main__':
     
@@ -196,8 +238,6 @@ if __name__ == '__main__':
     df_aeroportos.columns = df_aeroportos.columns.str.lower()
     df_aeroportos = df_aeroportos.apply(lambda x: x.astype(str).str.lower() if x.dtype == 'object' else x)
     df_aeroportos['continente'] = df_aeroportos.apply(coloca_continente, axis=1)
-
-    #print(df_aeroportos)
 
     valor = 'europa'
     df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
@@ -212,43 +252,19 @@ if __name__ == '__main__':
 
     lista_datas = cria_lista_datas(data_inicial, data_final)
 
-    #Abrir Chrome Browser e Google Flights
-    # Configurar a posição e tamanho da janela
-    largura_tela, altura_tela = pyautogui.size()
-    posicao_x = 0
-    posicao_y = 0
-    largura_janela = largura_tela // 2
-    altura_janela = altura_tela
-
-    options = webdriver.ChromeOptions()
-    options.add_argument(f"--window-position={posicao_x},{posicao_y}")
-    options.add_argument(f"--window-size={largura_janela},{altura_janela}")
-    options.add_argument("--headless=new")
-    driver = webdriver.Chrome('chromedriver', options=options)
-
-
+    lock = threading.Lock()
+    
+    # Criar e iniciar threads
+    threads = []
+    print(df_respostas)
     for data in lista_datas:
-        for cod_aerop in lista_codigos_europeus:
-            resposta = google_scrapy(cod_aerop, cod_dest, data, driver)
-            if resposta == 'Nao ha voos':
-                print('nao ha voos de '+cod_aerop+' na data '+data)
-            
-            else:
-                dados_resposta = pega_dados_resposta(resposta)
-                dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1], 
-                'data_saida': dados_resposta[2], 'hora_saida': dados_resposta[3], 
-                'tempo_total': dados_resposta[4]}]
-                df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
-                df_respostas_ordernadoporpreco = df_respostas.sort_values(by = 'valor')
-                df_respostas_ordernadoporpreco['origem'] = ajusta_caracteres(df_respostas_ordernadoporpreco['origem'])
-                df_respostas_ordernadoporpreco['data_saida'] = ajusta_caracteres(df_respostas_ordernadoporpreco['data_saida'])
-                df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
-                print(df_respostas_ordernadoporpreco)
-    
-    #Fechando o Browser9
-    driver.quit()
-    
-    #print(df_respostas)
+        thread = threading.Thread(target=processar_dados, args = (data, lista_codigos_europeus,))
+        threads.append(thread)
+        thread.start()
+
+    # Aguardar todas as threads terminarem
+    for thread in threads:
+        thread.join()
     
     '''
     #resposta = google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')
