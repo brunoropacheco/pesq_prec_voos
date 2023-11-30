@@ -10,6 +10,7 @@ import re
 from datetime import datetime, timedelta
 import pyautogui
 import threading
+import os
 
 '''
 busca_voos.py
@@ -19,6 +20,7 @@ Bruno Rodrigues Pacheco
 Esta versao esta fazendo o seguinte:
     - usa o selenium para navegar no gooogle flights e buscar os precos de passagens
         - o selenium precisa da aplicacao chromedriver.exe colocado em alguma pasta do path
+        - colocar o chromedriver dentro da pasta do venv/Scripts'
 '''
 
 #Função para achar elementos na página
@@ -49,6 +51,12 @@ def wait(driver,css):
 
 #Programa de Controle de busca de passagens
 def google_scrapy(dep, arr, dep_dt, driver):
+    """
+    This function performs a web scraping on Google Flights website to search for flights.
+    It receives the departure city (dep), arrival city (arr), departure date (dep_dt) and a driver object.
+    The driver object is used to interact with the website.
+    The function returns information about the best flight found or 'Nao ha voos' if no flights were found.
+    """
     
     driver.get('https://www.google.com/flights?hl=pt&curr=BRL#flt=')
 
@@ -101,53 +109,24 @@ def google_scrapy(dep, arr, dep_dt, driver):
         #print('nao ha voos')
         return 'Nao ha voos'
 
-    '''
-    #Armazendo informação extra sobre o preço da passagem
-    add_info = find(driver,'[class="frOi8 AdWm1c fVSoi"]')[0].text
-    print(add_info)
-
-     #Procurando por passagens baratas no período próximo
-    tickets = [elements.text.split('\n') for elements in find(driver, '[class="mrywM"]')]
-    print(tickets)
-    value = tickets[0][15:-15]
-    price = [float(v.replace('R$ ',"").replace('.','')) for v in value]
-    min_price = min(price)
-
-    #Interface de Saída
-    print(f'Melhor voo:')
-    print(info,'\n')
-    print(add_info)
-    print(f'\nO menor valor encontrado próximo da data foi de R${min_price}')
-    '''
-    
-def coloca_continente(row):
-    paises_europeus = [
-    'alemanha', 'austria', 'belgica', 'bosnia', 'bulgaria', 'croacia',
-    'dinamarca', 'espanha', 'finlandia', 'franca', 'grecia',
-    'holanda', 'hungria', 'inglaterra', 'irlanda', 'italia', 'noruega',
-    'polonia', 'portugal', 'rep tcheca', 'romenia', 'russia', 'servia',
-    'suecia', 'suica', 'ucrania']
-    if row['pais'] in paises_europeus:
-        return 'europa'
-
 def pega_dados_resposta(string_voo):
 
     # Expressões regulares para extrair os valores desejados
     valor_match = re.search(r"A partir de (\d+) Reais brasileiros", string_voo)
     origem_match = re.search(r"Sai do aeroporto (.+?) às", string_voo)
-    #destino_match = re.search(r"chega no aeroporto (.+?) às", string_voo)
+    destino_match = re.search(r"chega no aeroporto (.+?) às", string_voo)
     data_saida_match = re.search(r"(\d{2}:\d{2}) do dia (.+?) (\d+)", string_voo)
     tempo_total_match = re.search(r"Duração total: (.+?)\. Parada", string_voo)
 
     # Extrair os valores correspondentes das correspondências
     valor = valor_match.group(1) if valor_match else None
     origem = origem_match.group(1) if origem_match else None
-    #destino = destino_match.group(1) if destino_match else None
+    destino = destino_match.group(1) if destino_match else None
     hora_saida, dia_saida, mes_saida = data_saida_match.groups() if data_saida_match else (None, None, None)
     tempo_total = tempo_total_match.group(1) if tempo_total_match else None
 
     # Criar uma lista com os valores extraídos
-    lista_voo = [valor, origem, f"{dia_saida}, {mes_saida}", hora_saida, tempo_total]
+    lista_voo = [valor, origem, f"{dia_saida}, {mes_saida}", hora_saida, tempo_total, destino]
     return lista_voo
 
 def cria_lista_datas(data_ini, data_fin):
@@ -192,7 +171,7 @@ def ajusta_caracteres(coluna):
     coluna = coluna.str.replace('ü', 'u')
     return coluna
 
-def processar_dados(data_th, cods_europeus):
+def processar_dados(data_th, orig, dest):
     print(f'Iniciando processamento para a data {data_th} em thread {threading.current_thread().name} - data ')
     global df_respostas
     #Abrir Chrome Browser e Google Flights
@@ -201,81 +180,134 @@ def processar_dados(data_th, cods_europeus):
     options.add_argument("--headless=new")
     driver = webdriver.Chrome('chromedriver', options=options)
     
-    for cod_aerop in cods_europeus:
-        try:
-            resposta = google_scrapy(cod_aerop, cod_dest, data_th, driver)
-            if resposta == 'Nao ha voos':
-                print('nao ha voos de '+cod_aerop+' na data '+data_th)
-            
-            else:
-                dados_resposta = pega_dados_resposta(resposta)
-                dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1], 
-                'data_saida': dados_resposta[2], 'hora_saida': dados_resposta[3], 
-                'tempo_total': dados_resposta[4]}]
+    for cod_arp_orig in orig:
+        for cod_arp_dest in dest:
+            try:
+                resposta = google_scrapy(cod_arp_orig, cod_arp_dest, data_th, driver)
+                if resposta == 'Nao ha voos':
+                    print('nao ha voos de '+cod_arp_orig+' para '+cod_arp_dest+' na data '+data_th)
+                
+                else:
+                    dados_resposta = pega_dados_resposta(resposta)
+                    dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1], 
+                    'destino': dados_resposta[5], 'data_saida': dados_resposta[2], 'hora_saida': dados_resposta[3], 
+                    'tempo_total': dados_resposta[4]}]
 
-                lock.acquire()
+                    lock.acquire()
 
-                df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
-                df_respostas_ordernadoporpreco = df_respostas.sort_values(by = 'valor')
-                df_respostas_ordernadoporpreco['origem'] = ajusta_caracteres(df_respostas_ordernadoporpreco['origem'])
-                df_respostas_ordernadoporpreco['data_saida'] = ajusta_caracteres(df_respostas_ordernadoporpreco['data_saida'])
-                df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
-                lock.release()
+                    df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
+                    df_respostas_ordernadoporpreco = df_respostas.sort_values(by = 'valor')
+                    df_respostas_ordernadoporpreco['origem'] = ajusta_caracteres(df_respostas_ordernadoporpreco['origem'])
+                    df_respostas_ordernadoporpreco['destino'] = ajusta_caracteres(df_respostas_ordernadoporpreco['destino'])
+                    df_respostas_ordernadoporpreco['data_saida'] = ajusta_caracteres(df_respostas_ordernadoporpreco['data_saida'])
+                    df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
+                    lock.release()
 
-                print(df_respostas_ordernadoporpreco)
-            
-        except:
-            print('erro na thread '+threading.current_thread().name+' para o aeroporto '+cod_aerop+' na data '+data_th)
-            pass
+                    print(df_respostas_ordernadoporpreco)
+                
+            except:
+                print('erro na thread '+threading.current_thread().name+' do aeroporto '+cod_arp_orig+' para o aeroporto '+cod_arp_dest+' na data '+data_th)
+                pass
 
     #Fechando o Browser9
     driver.quit()
 
+def obt_rsp_oto_otm_mto():
+    """
+    Function to obtain user input for the desired search mode.
+
+    Returns:
+        int: The selected search mode (1 for One to One, 2 for One to Many, 3 for Many to One).
+    """
+    padrao = r"^[1-3]$"
+    while True:
+        resposta = input('Deseja pesquisar qual modalidade?\n1 - One to One\n2 - One to Many\n3 - Many to One?\n')
+        if re.match(padrao, resposta):
+            return int(resposta)
+        else:
+            print("Resposta invalida. Você deve inserir um número inteiro entre 1 e 3.")
+
+def obt_rsp_aeroportos(df_aeroportos):
+    """
+    Function to obtain user input for the desired airports.
+
+    Args:
+        df_aeroportos (pandas.DataFrame): DataFrame with airport information.
+
+    Returns:
+        list: The selected airport codes.
+    """
+    padrao = r"^[A-Z]{3}$"
+    while True:
+        print("Lista de Aeroportos:")
+        for index, row in df_aeroportos.iterrows():
+            print(f"Código: {row['codigo']} - Cidade: {row['cidade']} - País: {row['pais']}")
+        resposta = input('Digite os códigos dos aeroportos separados por vírgula:\n')
+        aeroportos = resposta.split(',')
+        aeroportos = [a.strip().upper() for a in aeroportos]
+        if all(re.match(padrao, a) for a in aeroportos):
+            if all(a in df_aeroportos['codigo'].to_list() for a in aeroportos):
+                return aeroportos
+            else:
+                print("Resposta inválida. Você deve inserir códigos de aeroportos válidos.")
+        else:
+            print("Resposta inválida. Você deve inserir códigos de aeroportos válidos.")
 
 if __name__ == '__main__':
     
     df_aeroportos = pd.read_csv('.\\aeroportos.csv', delimiter=",")
-    df_aeroportos.columns = df_aeroportos.columns.str.lower()
-    df_aeroportos = df_aeroportos.apply(lambda x: x.astype(str).str.lower() if x.dtype == 'object' else x)
-    df_aeroportos['continente'] = df_aeroportos.apply(coloca_continente, axis=1)
+    #df_aeroportos.columns = df_aeroportos.columns.str.lower()
+    #df_aeroportos = df_aeroportos.apply(lambda x: x.astype(str).str.lower() if x.dtype == 'object' else x)
+    #df_aeroportos['continente'] = df_aeroportos.apply(coloca_continente, axis=1)
 
-    valor = 'europa'
+    #valor = 'europa'
     df_aeroportos['codigo'] = df_aeroportos['codigo'].str.upper()
-    lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()  
+    #lista_codigos_europeus = df_aeroportos.query('continente == @valor')['codigo'].to_list()  
     
     df_respostas = pd.DataFrame(columns=['valor', 'origem','data_saida'
                                 , 'hora_saida','tempo_total'])
 
-    data_inicial = datetime.strptime(input('Data inicial - formato DD/MM/AAAA: '), "%d/%m/%Y")
-    data_final = datetime.strptime(input('Data final - formato DD/MM/AAAA: '), "%d/%m/%Y")
-    cod_dest = input('Aeroporto de Destino: ')
-
+    #data_inicial = datetime.strptime(input('Data inicial - formato DD/MM/AAAA: '), "%d/%m/%Y")
+    #data_final = datetime.strptime(input('Data final - formato DD/MM/AAAA: '), "%d/%m/%Y")
+    
+    data_inicial = datetime.strptime("09/02/2024", "%d/%m/%Y")
+    data_final = datetime.strptime("25/02/2024", "%d/%m/%Y")
     lista_datas = cria_lista_datas(data_inicial, data_final)
+    
+    opcao_oto_otm_mto = obt_rsp_oto_otm_mto()
+    
+    if opcao_oto_otm_mto == 1:
+        print('Opcao selecionada: One to One')
+        # cod_orig = input('Aeroporto de Origem: ')
+        # cod_dest = input('Aeroporto de Destino: ')
+        orig = ['GRU']
+        dest = ['LIS']
+        pass
+    
+    elif opcao_oto_otm_mto == 2:
+        print('Opcao selecionada: One to Many')
+        # cod_orig = input('Aeroporto de Origem: ')
+        orig = ['GRU']
+        #dest = obt_rsp_aeroportos(df_aeroportos) 
+        dest = ['LIS', 'MAD', 'BCN']   
+    
+    elif opcao_oto_otm_mto == 3:
+        print('Opcao selecionada: Many to One')
+        #orig = obt_rsp_aeroportos(df_aeroportos)
+        orig = ['LIS', 'MAD', 'BCN']
+        # cod_dest = input('Aeroporto de Destino: ')
+        dest = ['LIS']
 
     lock = threading.Lock()
     
     # Criar e iniciar threads
     threads = []
-    print(df_respostas)
+    print(df_respostas.head())
     for data in lista_datas:
-        thread = threading.Thread(target=processar_dados, args = (data, lista_codigos_europeus,))
+        thread = threading.Thread(target=processar_dados, args = (data, orig, dest,))
         threads.append(thread)
         thread.start()
 
     # Aguardar todas as threads terminarem
     for thread in threads:
         thread.join()
-    
-    '''
-    #resposta = google_scrapy(lista_codigos_europeus[0], 'GIG', '25/02/2024')
-    resposta = 'A partir de 2904 Reais brasileiros. Voo da Tap Air Portugal com 1 parada. Sai do aeroporto Aeroporto de Berlim-Brandemburgo às 12:50 do dia domingo, fevereiro 25 e chega no aeroporto Aeroporto Internacional do Rio de Janeiro - Galeão às 06:20 do dia segunda-feira, fevereiro 26. Duração total: 21 h 30 min. Parada (1 de 1) de 8 h no aeroporto Aeroporto Humberto Delgado, emLisboa.'
-    dados_resposta = pega_dados_resposta(resposta)
-    print(dados_resposta)
-    dict_resposta = [{'valor': dados_resposta[0], 'origem': dados_resposta[1],
-                     'destino': dados_resposta[2], 'data_saida': dados_resposta[3],
-                                'hora_saida': dados_resposta[4], 
-                                'tempo_total': dados_resposta[5]}]
-    print(dict_resposta)
-    df_respostas = pd.concat([df_respostas, pd.DataFrame(dict_resposta)])
-    print(df_respostas)
-    '''

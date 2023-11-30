@@ -48,3 +48,16 @@ for thread in threads:
     thread.join()
 
 # Agora você pode prosseguir com o restante do código após as threads terminarem
+
+def obter_resposta_valida():
+    padrao = r"^[1-3]$"
+    while True:
+        resposta = input("Digite um número inteiro entre 1 e 3: ")
+        if re.match(padrao, resposta):
+            return int(resposta)
+        else:
+            print("Resposta inválida. Você deve inserir um número inteiro entre 1 e 3.")
+
+# Exemplo de uso
+resposta = obter_resposta_valida()
+print(f"Você inseriu a resposta válida: {resposta}")
