@@ -1,0 +1,7 @@
+1 - selecionar entre one to one, one to many ou many to one ok
+2 - criar menu para escolher entre eles ok
+1 - poder pesquisar ida e volta, alem de somente ida
+2 - criar menu para escolher entre somente ida ou ida e volta
+3 - opcao do usuario informar continente
+4 - limite de threads por vez
+5 - colocar por cidade ao inves de colocar por aeroporto

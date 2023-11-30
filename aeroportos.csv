@@ -1,129 +1,134 @@
-PAIS,CIDADE,AEROPORTO,CODIGO
-Africa do Sul,Cidade do Cabo,Cape Int,CPT
-Africa do Sul,Johannerburg,Johannerburg Hand,JNB
-Alemanha,Berlim,Brandemburgo,BER
-Alemanha,Frankfurt,Frankfurt Main Int,FRA
-Alemanha,Stuttgart,Stuttgart,STR
-Alemanha,Hannover,Hanover,HAJ
-Alemanha,Dortmund,Dormund,DTM
-Alemanha,Hamburg,Hamburg,HAM
-Alemanha,Munich,Franz Josef Strauss Munich Int.,MUC
-Angola,Luanda,4 de fevereiro Apt,LAD
-Arabia Saudita,Riyadh,King Khaled Int.,RUH
-Argentina,Buenos Aires,Jorge Newbery,AEP
-Argentina,Buenos Aires,Min. Pistarini Int. Arpt (EZEIZA),EZE
-Argentina,Rosario,Fisherton,ROS
-Argentina,Cordoba,Pajas Blancas,COR
-Argentina,Bariloche,San Carlos de Bariloche Int.,BRC
-Aruba,Aruba,Rainha Beatrix,AUA
-Australia,Sydney,Kingsfond Smith,SYD
-Australia,Melbourne,Melbourne Int.,MEL
-Australia,Brisbane,Brisbane Int.,BNE
-Austria,Viena,Flughafen Wien Ag,VIE
-Belgica,Bruxelas,Aerop. Bruxelas,BRU
-Bosnia,Sarajevo,Butmir Int.,SJJ
-Bulgaria,Sofia,Vrazhdebna Int.,SOF
-Cabo Verde,Espargos,Amilcar Cabral Int.,SID
-Canada,Ottawa,Ottawa Macdonald-Cartier Int.,YOW
-Canada,Montreal,Dorval Int.,YUL
-Canada,Toronto,Pearson Int.,YYZ
-Canada,Vancouver,Vancouver Int.,YVR
-Canada,Quebec,Quebec,YQB
-Chile,Santiago,Arturo Merino Benitez,SCL
-Chile,Puerto Montt,Tepual,PMC
-China,Pequim,Capital Int.,PEK
-China,Xangai,Pu Dong Int.,PVG
-China,Hong Kong,Hong Kong Int.,HKG
-Colombia,Bogota,Eldorado,BOG
-Coreia do Sul,Seul,Incheon Int.,ICN
-Croacia,Zagreb,Pleso Int.,ZAG
-Cuba,Havana,Jose Marti,HAV
-Dinamarca,Copenhague,Copenhague Int.,CPH
-Egito,Cairo,Cairo Int.,CAI
-Em. Arabes U.,Dubai,Dubai Int.,DXB
-Equador,Guayaquil,Simon Bolivar,GYE
-Equador,Quito,Mariscal Sucr,UIO
-Espanha,Madri,Aerop. Barajas,MAD
-Espanha,Barcelona,Barcelona Int.,BCN
-Est. Unidos,Atlanta,William B Hartsfield Int,ATL
-Est. Unidos,Boston,Boston Logan Int.,BOS
-Est. Unidos,Chicago,O'Hare Int.,ORD
-Est. Unidos,Dallas,Dallas Fort Worth,DFW
-Est. Unidos,Denver,Denver Int.,DEN
-Est. Unidos,Detroit,Detroit City,DTW
-Est. Unidos,Hawai - Honolulu,Honolulu Int.,HNL
-Est. Unidos,Houston,George Bush Int,IAH
-Est. Unidos,Las Vegas,McCarran Int.,LAS
-Est. Unidos,Los Angeles,Los Angeles Int.,LAX
-Est. Unidos,Miami - FL,Miami Int.,MIA
-Est. Unidos,Nova Iorque,John F. Kennedy Int.,JFK
-Est. Unidos,Nova Iorque,Newark Liberty - New Jersey,EWR
-Est. Unidos,Nova Iorque,La Guardia,LGA
-Est. Unidos,Orlando,Orlando Int .MCO,MCO
-Est. Unidos,Sao Francisco,Sao Francisco Int.,SFO
-Est. Unidos,Seattle,Tacoma Int.,SEA
-Est. Unidos,Tampa - FL,Tampa Int.,TPA
-Est. Unidos,Washington - D.C.,Dulles Int.,IAD
-Est. Unidos,Washington - D.C.,Ronald Reagan,DCA
-Est. Unidos,Washington - D.C.,Baltimore,BWI
-Filipinas,Manila,Ninoy Aquino Int.,MNL
-Finlandia,Helsinki,Vantaa Int.,HEL
-Franca,Paris,Charles de Gaulle,CDG
-Franca,Paris,Orly,ORY
-Grecia,Atenas,Eleftherios Venizelos Int.,ATH
-Holanda,Amsterdan,Aerop. Schiphol,AMS
-Hungria,Budapeste,Feruhegy Int.,BUD
-India,Nova Deli,Indira Ghandi Int.,DEL
-Indonesia,Jakarta,Soekarno-Hatta Int.,CGK
-Inglaterra,Londres,Heathrow Int.,LHR
-Inglaterra,Londres,Gatwick Int.,LGW
-Irlanda,Dublin,Dublin Int.,DUB
-Israel,Tel Aviv,Ben Gurion Int.,TLV
-Italia,Milao,Aerop. Linate,LIN
-Italia,Milao,Malpensa,MXP
-Italia,Roma,Fiumicino Int.,FCO
-Italia,Roma,Ciampino,CIA
-Italia,Veneza,Marco Polo,VCE
-Japao,Osaka,Kansai Int.,KIX
-Japao,Toquio,Toquio Int. - Narita,NRT
-Japao,Toronto,Toquio Int,HND
-Japao,Nagoya,Chubu Int,NGO
-Japao,Osaka,Osaka Int.,ITM
-Libano,Beirute,Beirute Int.,BEY
-Malasia,Kuala Lumpur,Kuala Lumpur Int.,KUL
-Mexico,Cid. do Mexico,Juarez Int.,MEX
-Mexico,Cancun,Cancun Int,CUN
-Mexico,Guadalajara,Miguel Hidal Int,GDL
-Mexico,Acapulco,Alvarez Int,ACA
-Mocambique,Maputo,Maputo Int.,MPM
-Nigeria,Lagos,Murtala Muhammed,LOS
-Noruega,Oslo,Oslo Airport,OSL
-Nova Zelandia,Wellington,Wellington Int.,WLG
-Nova Zelandia,Auckland,Auckland Int.,AKL
-Panama,Panama City,Tocumen Int.,PTY
-Paraguai,Assuncao,Silvio Pettirossi,ASU
-Paraguai,Ciudad del Este,Alejo Garcia,AGT
-Peru,Lima,Jorge Chavez Int.,LIM
-Peru,Cuzco,Velazco Astete,CUZ
-Polonia,Varsovia,Warsaw Frederic Chopin,WAW
-Porto Rico,Jan Juan,Luis Munoz Marin Int.,SJU
-Portugal,Lisboa,Portela de Sacavem,LIS
-Portugal,C. do Porto,Porto Francisco de Sa Carneiro,OPO
-Quenia,Nairobi,Jomo Kenyatta Int.,NBO
-Rep Tcheca,Praga,Ruzyne Int.,PRG
-Romenia,Bucareste,Otopeni Int.,OPT
-Russia,St Petersburg,Pulkovo,LED
-Russia,Moscou,Sheremetyevo Int,SVO
-Senegal,Dakar,Yoff Airport,DKR
-Servia,Belgrado,Belgrado Int.,BEG
-Singapura,Singapore,Singapore Changi Apt.,SIN
-Siria,Damasco,Damasco,DAM
-Suecia,Stockholm,Stockholm Arlanda,ARN
-Suica,Genebra,Cointrin Int.,GVA
-Suica,Zurique,Aerop. Kloten Zurich Int.,ZRH
-Tailandia,Bangkok,Bangkok Int.,BKK
-Turquia,Istambul,Ataturk Int.,IST
-Ucrania,Kiev,Borispol Int.,KBP
-Uruguai,Montevideo,Aerop. Carrasco,MVD
-Uruguai,Punta del Este,Punta del Este,PDP
-Venezuela,Caracas,Simon Bolivar,CCS
+pais,cidade,aeroporto,codigo,continente
+africa_do_sul,cidade_do_cabo,cape_int,cpt,africa
+africa_do_sul,johannerburg,johannerburg_hand,jnb,africa
+alemanha,berlim,brandemburgo,ber,europa
+alemanha,frankfurt,frankfurt_main_int,fra,europa
+alemanha,stuttgart,stuttgart,str,europa
+alemanha,hannover,hanover,haj,europa
+alemanha,dortmund,dormund,dtm,europa
+alemanha,hamburg,hamburg,ham,europa
+alemanha,munich,franz_josef_strauss_munich_int,muc,europa
+angola,luanda,4_de_fevereiro_apt,lad,africa
+arabia_saudita,riyadh,king_khaled_int,ruh,asia
+argentina,buenos_aires,jorge_newbery,aep,america_do_sul
+argentina,buenos_aires,min_pistarini_int_arpt,eze,america_do_sul
+argentina,rosario,fisherton,ros,america_do_sul
+argentina,cordoba,pajas_blancas,cor,america_do_sul
+argentina,bariloche,san_carlos_de_bariloche_int,brc,america_do_sul
+aruba,aruba,rainha_beatrix,aua,america_central
+australia,sydney,kingsfond_smith,syd,oceania
+australia,melbourne,melbourne_int,mel,oceania
+australia,brisbane,brisbane_int,bne,oceania
+austria,viena,flughafen_wien_ag,vie,europa
+belgica,bruxelas,aerop_bruxelas,bru,europa
+bosnia,sarajevo,butmir_int,sjj,europa
+bulgaria,sofia,vrazhdebna_int,sof,europa
+cabo_verde,espargos,amilcar_cabral_int,sid,africa
+canada,ottawa,ottawa_macdonald_cartier_int,yow,america_do_norte
+canada,montreal,dorval_int,yul,america_do_norte
+canada,toronto,pearson_int,yyz,america_do_norte
+canada,vancouver,vancouver_int,yvr,america_do_norte
+canada,quebec,quebec,yqb,america_do_norte
+chile,santiago,arturo_merino_benitez,scl,america_do_sul
+chile,puerto_montt,tepual,pmc,america_do_sul
+china,pequim,capital_int,pek,asia
+china,xangai,pu_dong_int,pvg,asia
+china,hong_kong,hong_kong_int,hkg,asia
+colombia,bogota,eldorado,bog,america_do_sul
+coreia_do_sul,seul,incheon_int,icn,asia
+croacia,zagreb,pleso_int,zag,europa
+cuba,havana,jose_marti,hav,america_central
+dinamarca,copenhague,copenhague_int,cph,europa
+egito,cairo,cairo_int,cai,africa
+em_arabes_u,dubai,dubai_int,dxb,asia
+equador,guayaquil,simon_bolivar,gye,america_do_sul
+equador,quito,mariscal_sucr,uio,america_do_sul
+espanha,madri,aerop_barajas,mad,europa
+espanha,barcelona,barcelona_int,bcn,europa
+est_unidos,atlanta,william_b_hartsfield_int,atl,america_do_norte
+est_unidos,boston,boston_logan_int,bos,america_do_norte
+est_unidos,chicago,o_hare_int,ord,america_do_norte
+est_unidos,dallas,dallas_fort_worth,dfw,america_do_norte
+est_unidos,denver,denver_int,den,america_do_norte
+est_unidos,detroit,detroit_city,dtw,america_do_norte
+est_unidos,hawai_honolulu,honolulu_int,hnl,america_do_norte
+est_unidos,houston,george_bush_int,iah,america_do_norte
+est_unidos,las_vegas,mccarran_int,las,america_do_norte
+est_unidos,los_angeles,los_angeles_int,lax,america_do_norte
+est_unidos,miami_fl,miami_int,mia,america_do_norte
+est_unidos,nova_iorque,john_f_kennedy_int,jfk,america_do_norte
+est_unidos,nova_iorque,newark_liberty_new_jersey,ewr,america_do_norte
+est_unidos,nova_iorque,la_guardia,lga,america_do_norte
+est_unidos,orlando,orlando_int_mco,mco,america_do_norte
+est_unidos,sao_francisco,sao_francisco_int,sfo,america_do_norte
+est_unidos,seattle,tacoma_int,sea,america_do_norte
+est_unidos,tampa_fl,tampa_int,tpa,america_do_norte
+est_unidos,washington_dc,dulles_int,iad,america_do_norte
+est_unidos,washington_dc,ronald_reagan,dca,america_do_norte
+est_unidos,washington_dc,baltimore,bwi,america_do_norte
+filipinas,manila,ninoy_aquino_int,mnl,asia
+finlandia,helsinki,vantaa_int,hel,europa
+franca,paris,charles_de_gaulle,cdg,europa
+franca,paris,orly,ory,europa
+grecia,atenas,eleftherios_venizelos_int,ath,europa
+holanda,amsterdan,aerop_schiphol,ams,europa
+hungria,budapeste,feruhegy_int,bud,europa
+india,nova_deli,indira_ghandi_int,del,asia
+indonesia,jakarta,soekarno_hatta_int,cgk,asia
+inglaterra,londres,heathrow_int,lhr,europa
+inglaterra,londres,gatwick_int,lgw,europa
+irlanda,dublin,dublin_int,dub,europa
+israel,tel_aviv,ben_gurion_int,tlv,asia
+italia,milao,aerop_linate,lin,europa
+italia,milao,malpensa,mxp,europa
+italia,roma,fiumicino_int,fco,europa
+italia,roma,ciampino,cia,europa
+italia,veneza,marco_polo,vce,europa
+japao,osaka,kansai_int,kix,asia
+japao,toquio,toquio_int_narita,nrt,asia
+japao,toronto,toquio_int,hnd,asia
+japao,nagoya,chubu_int,ngo,asia
+japao,osaka,osaka_int,itm,asia
+libano,beirute,beirute_int,bey,asia
+malasia,kuala_lumpur,kuala_lumpur_int,kul,asia
+mexico,cid_do_mexico,juarez_int,mex,america_central
+mexico,cancun,cancun_int,cun,america_central
+mexico,guadalajara,miguel_hidal_int,gdl,america_central
+mexico,acapulco,alvarez_int,aca,america_central
+mocambique,maputo,maputo_int,mpm,africa
+nigeria,lagos,murtala_muhammed,los,africa
+noruega,oslo,oslo_airport,osl,europa
+nova_zelandia,wellington,wellington_int,wlg,oceania
+nova_zelandia,auckland,auckland_int,akl,oceania
+panama,panama_city,tocumen_int,pty,america_central
+paraguai,assuncao,silvio_pettirossi,asu,america_do_sul
+paraguai,ciudad_del_este,alejo_garcia,agt,america_do_sul
+peru,lima,jorge_chavez_int,lim,america_do_sul
+peru,cuzco,velazco_astete,cuz,america_do_sul
+polonia,varsovia,warsaw_frederic_chopin,waw,europa
+porto_rico,jan_juan,luis_munoz_marin_int,sju,america_central
+portugal,lisboa,portela_de_sacavem,lis,europa
+portugal,c_do_porto,porto_francisco_de_sa_carneiro,opo,europa
+quenia,nairobi,jomo_kenyatta_int,nbo,africa
+rep_tcheca,praga,ruzyne_int,prg,europa
+romenia,bucareste,otopeni_int,opt,europa
+russia,st_petersburg,pulkovo,led,europa
+russia,moscou,sheremetyevo_int,svo,europa
+senegal,dakar,yoff_airport,dkr,africa
+servia,belgrado,belgrado_int,beg,europa
+singapura,singapore,singapore_changi_apt,sin,asia
+siria,damasco,damasco,dam,asia
+suecia,stockholm,stockholm_arlanda,arn,europa
+suica,genebra,cointrin_int,gva,europa
+suica,zurique,aerop_kloten_zurich_int,zrh,europa
+tailandia,bangkok,bangkok_int,bkk,asia
+turquia,istambul,ataturk_int,ist,europa
+ucrania,kiev,borispol_int,kbp,europa
+uruguai,montevideo,aerop_carrasco,mvd,america_do_sul
+uruguai,punta_del_este,punta_del_este,pdp,america_do_sul
+venezuela,caracas,simon_bolivar,ccs,america_do_sul
+brasil,sao_paulo,guarulhos,gru,america_do_sul
+brasil,rio_de_janeiro,galeao,gig,america_do_sul
+brasil,brasilia,juscelino_kubitschek,bsb,america_do_sul
+brasil,salvador,deputado_luis_eduardo_magalhaes,ssa,america_do_sul
+brasil,porto_alegre,salgado_filho,poa,america_do_sul
