@@ -203,7 +203,7 @@ def processar_dados(data_th, orig, dest):
                     df_respostas_ordernadoporpreco.to_csv('.\\voos.csv', index=False) 
                     lock.release()
 
-                    print(df_respostas_ordernadoporpreco)
+                    print(df_respostas_ordernadoporpreco.head())
                 
             except:
                 print('erro na thread '+threading.current_thread().name+' do aeroporto '+cod_arp_orig+' para o aeroporto '+cod_arp_dest+' na data '+data_th)
@@ -271,7 +271,7 @@ if __name__ == '__main__':
     #data_final = datetime.strptime(input('Data final - formato DD/MM/AAAA: '), "%d/%m/%Y")
     
     data_inicial = datetime.strptime("09/02/2024", "%d/%m/%Y")
-    data_final = datetime.strptime("25/02/2024", "%d/%m/%Y")
+    data_final = datetime.strptime("10/02/2024", "%d/%m/%Y")
     lista_datas = cria_lista_datas(data_inicial, data_final)
     
     opcao_oto_otm_mto = obt_rsp_oto_otm_mto()
@@ -302,7 +302,6 @@ if __name__ == '__main__':
     
     # Criar e iniciar threads
     threads = []
-    print(df_respostas.head())
     for data in lista_datas:
         thread = threading.Thread(target=processar_dados, args = (data, orig, dest,))
         threads.append(thread)
